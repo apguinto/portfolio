@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/ag-logo.png">
+    <title>AVERY | Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/product-sans');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html{
+            font-size: 24px;
+            font-family: 'Product Sans','Open Sans', sans-serif;
+            color: #141414;
+        }
+
+        body{
+            background-color: #FEFFF7;
+        }
+
+        .section-title{
+            text-transform: uppercase;
+            font-size: 5vw;
+        }
+
+        .line{
+            background-color: #141414;
+            width: 10vw;
+            height: .3vw;
+            margin: 2vw
+        }
+
+
+
+        /* NAV BAR */
+        #nav-bar .nav-bar{
+            width: calc(100vw - (100vw - 100%));
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            z-index: 1;
+        }
+
+        .nav-bar{
+            padding: .5vw 0;
+            background-color: #446862;
+        }
+
+        .nav-bar .brand img{
+            margin: 2vw 4vw;
+            height: 1.2vw;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list ul li a{
+            margin: 2vw 4vw 2vw 0; 
+            color: #FCFFDE;
+            font-size: 2vw;
+            text-decoration: none;
+        }
+
+        .nav-list ul{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+        }
+
+        .hamburger{
+            margin: 0 3vw;
+            display: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bar{
+            display: block;
+            width: 5vw;
+            height: .5vw;
+            margin: .7vw auto;
+            -webkit-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            background-color: #FCFFDE;
+        }
+        /* END OF NAV BAR */
+
+        /* HOME SECTION*/
+        .home .container{
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h2{
+            font-size: 3.5vw;
+            font-weight: 600;
+            color: #141414;
+        }
+
+        h1{
+            font-size: 6vw;
+            margin: 1vw 0vw;
+            color: #141414;
+        }
+
+        #home .home{
+            width: calc(100vw - (100vw - 100%));
+            margin: 0;
+            padding: 6% 0 0 8%;
+            justify-content: flex-start;
+        }
+
+        .home{
+            background-color: #FEFFF7;
+            font-weight: normal;
+        }
+
+        span{
+            color: #446862;
+        }
+
+        .icon img{
+            margin: 0;
+            padding: 0;
+            width: 5vw;
+            height: 5vw;
+        }
+
+        .avery{
+            justify-content: flex-end;
+            width: 45vw;
+            filter: drop-shadow(17px 0px 3px #b4b4b4);
+        }
+        /* END OF HOME SECTION */
+
+
+        /* ABOUT SECTION */
+        #about .about{
+            width: calc(100vw - (100vw - 100%));
+            margin: 0;
+            padding: 6% 0 0 0;
+            text-align: center;
+        }
+
+        .container{
+            height: fit-content;
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .about{
+            background-color: #fff;
+            flex: content;
+            flex-direction: column;
+        }
+
+
+        .about .org-logo-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about .org-logo{
+            width: auto;
+            margin: 2vw;
+        }
+
+        .about p{
+            font-family: 'Open Sans' sans-serif;
+            font-size: 2vw;
+            margin: 3vw 10%;
+        }
+
+        .about button{
+            background-color: #446862;
+            border: none;
+            border-radius: 1.3vw;
+            color: #FCFFDE;
+            padding: 1vw 6vw;
+            margin: 2vw 0 6vw 0;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.5vw;
+            font-weight: 650;
+            cursor: pointer;
+        }
+
+        .about button:hover{
+            background-color: #12332e;
+            color: #FCFFDE;
+            transition: .2s ease;
+        }
+
+        .prog-lang-container{
+            padding: 3% 1%;
+            margin: 2vw;
+            background-color: #fff;
+            border: #b4b4b4 solid 1px;
+            border-radius: 20vw;
+            display: flex;
+            justify-content: center;
+        }
+
+        .prog-lang{
+            height: 8vw;
+            margin: 0 2vw;
+            
+        }
+        /* END OF ABOUT SECTION */
+
+
+        /* PROJECT SECTION */
+        #projects .projects{
+            width: calc(100vw - (100vw - 100%));
+            margin: 0;
+            padding: 6% 0 0 0;
+            text-align: center;
+        }
+
+        .projects{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .all-projects{
+            margin: 5vw 0;
+            flex-direction: column;
+        }
+
+        .project-item{
+            margin: 0 3vw;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-info{
+            width: 35vw;
+            height: 25vw;
+            background-color: #446862;
+            color: #fff;
+            padding: 2vw;
+            text-align: left;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .project-info h1{
+            margin: 0 0 3vw 0;
+            font-size: 2.5vw;
+            color: #fff;
+        }
+
+        .project-info p{
+            color: #fff;
+            font-size: 1.8vw;
+        }
+
+        .project-img{
+            width: 35vw;
+            height: 25vw;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .project-img img{
+            width: 35vw;
+            height: 25vw;
+            object-fit: cover;
+            transition: 0.3s ease transform;
+        }
+
+        .project-img img:hover{
+            transform: scale(1.2);
+        }
+
+        .mobile{
+            display: none;
+        }
+        /* END OF PROJECT SECTION */
+
+
+        /* CONTACT SECTION */
+        #contact .container{
+            width: calc(100vw - (100vw - 100%));
+            margin: 0;
+            padding: 6% 0 0 0;
+        }
+
+        .contact{
+            background-color: #446862;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .contact h1{
+            color: #FCFFDE;
+        }
+
+        .contact .line{
+            background-color: #FCFFDE;
+        }
+
+        .contact h2{
+            margin: 2vw;
+            color: #FCFFDE;
+            font-size: 2vw;
+            font-weight: 100;
+        }
+
+        .all-contacts{
+            padding-bottom: 6%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .contact-item{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-container{
+            margin: 2vw;
+            padding: 1vw 4vw 1vw 3vw;
+            display: flex;
+            flex-direction: row;
+            background-color: #b4b4b4;
+            border-radius: 1.5vw;
+        }
+
+        .item-container img{
+            height: 5vw;
+            margin: 0 2vw 0 0;
+        }
+
+        .item-container p{
+            font-size: 2vw;
+            color: #446862;
+            display: flex;
+            align-items: center;
+        }
+
+        .vertical-line{
+            background-color: #FCFFDE;
+            height: 20vw;
+            width: .1vw;
+            margin: 2vw;
+        }
+
+        .send-message p{
+            margin: 1vw;
+            color: #FCFFDE;
+            font-size: 2vw;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            margin: 2vw;
+        }
+
+        form input, form textarea{
+            width: 35vw;
+            font-size: 1.5vw;
+            font-family: 'Product Sans' sans-serif;
+            margin-bottom: 1vw;
+            padding: 1.5vw;
+            background-color: #b4b4b4;
+            border: none;
+            border-radius: 1.2vw;
+        }
+
+        form button{
+            width: 6vw;
+            background-color: #FCFFDE;
+            border: none;
+            border-radius: 1.3vw;
+            color: #446862;
+            margin-top: 2vw;
+            padding: 1vw 6vw;
+            text-align: center;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            font-size: 1.5vw;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        form button:hover{
+            background-color: #bcbea1;
+            color: #446862;
+            transition: .2s ease;
+        }
+        /* END OF CONTACT SECTION */
+
+
+        /* FOOTER */
+        .footer h1{
+            font-size: 2.5vw;
+        }
+
+        .footer h2{
+            text-align: left;
+            margin: 2vw 0;
+            font-size: 2vw;
+        }
+
+        .footer h3{
+            margin: 3vw 0 2vw 0;
+            font-size: 1.5vw;
+        }
+
+        .footer p{
+            font-size: 1.7vw;
+        }
+
+        .footer{
+            width: calc(100vw - (100vw - 100%));
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-items{
+            width: calc(100vw - (100vw - 100%));
+            margin: 6% 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signatory-items{
+            margin: 0 8vw 0 0;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .signatory-items img{
+            height: 5vw;
+            margin: 0 2vw 0 0;
+        }
+
+        .footer-contacts{
+            margin: 0 0 0 8vw;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .contact-me{
+            margin: 2vw;
+        }
+
+        .socials{
+            margin: 2vw;
+        }
+
+        .socials .icon{
+            margin: 0%;
+        }
+
+        .socials .icon img{
+            margin: 0;
+            height: 3vw;
+            width: 3vw;
+        }
+        /* END OF FOOTER */
+
+
+        /* MEDIA QUERY */
+        @media screen and (max-width: 700px) {
+            /* NAV BAR */
+            .hamburger{
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2){
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1){
+                transform: translateY(1.9vw) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3){
+                transform: translateY(-1.9vw) rotate(-45deg);
+            } 
+
+            .nav-list ul{
+                position: fixed;
+                left: -100%;
+                top: 6.7vw;
+                gap: 0;
+                flex-direction: column;
+                background-color: #446862;
+                width: calc(100vw - (100vw - 100%));
+                text-align: center;
+                transition: 0.3s;
+            }
+
+            .nav-list ul li{
+                margin: 16px 0;
+            }
+
+            .nav-list ul.active{
+                left: 0;
+            }
+            /* END OF NAV BAR */
+
+            /* HOME SECTION */
+            #home .container{
+                display: block;
+            }
+
+            h2{
+                font-size: 6vw;
+                font-weight: 600;
+                color: #141414;
+            }
+            
+            h1{
+                font-size: 10vw;
+                margin: 1vw 0vw;
+                color: #141414;
+            }   
+
+            #home .home{
+                padding: 10%;
+                text-align: center;
+            }
+
+            .icon{
+                margin-top: 1vh;
+            }
+
+            .avery{
+                width: 0;
+                display: none;
+            }
+
+            /* PROJECTS SECTION */
+            .mobile{
+                display: flex;
+            }
+
+            .desktop{
+                display: none;
+            }
+
+            .project-item{
+                flex-direction: column;
+                margin: 2vw 0 7vw 0;
+                /* border-radius: 2vw; */
+            }
+
+            .project-info{
+                width: 70vw;
+                text-align: center;
+            }
+
+            .project-info h1{
+                font-size: 3.3vw;
+            }
+            
+            .project-info p{
+                font-size: 3vw;
+            }
+
+            .project-img img{
+                width: 80vw;
+                height: 40vw;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            .project-img{
+                width: 70vw;
+                height: 40vw;
+                object-fit: cover;
+                overflow: hidden;
+            }
+
+            /* CONTACT SECTION */
+            .vertical-line{
+                display: none;
+            }
+
+            .all-contacts{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-item{
+                display: flex;
+                flex-direction: column;
+            }
+
+            form input, form textarea{
+                width: 65vw;
+            }
+
+            form button{
+                width:auto;
+            }
+
+            /* FOOTER */
+            .footer h1, .footer p{
+                text-align: center;
+            }
+
+            .footer h1{
+                font-size: 4vw;
+            }
+
+            .footer h2{
+                font-size: 3vw;
+            }
+
+            .footer p{
+                font-size: 2vw;
+            }
+
+            .footer-items{
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .signatory-items img{
+                margin: 0;
+                height: 5vw;
+                width: 5vw;
+            }
+
+            .signatory-items{
+                margin: 3vw 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-contacts{
+                margin: 0;
+                display: flex;
+            }
+
+            .contact-me, .socials{
+                margin: 2vw 5vw;
+            }
+
+            .socials .icon img{
+                width: 5vw;
+                height: 5vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav id="nav-bar">
+        <div class="nav-bar container">
+            <div class="brand">
+                <a href="#home"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/apg-logo.png"></a>
+            </div>
+            <div class="nav-list">
+                <div class="hamburger mobile">
+                    <span class="bar mobile"></span>
+                    <span class="bar mobile"></span>
+                    <span class="bar mobile"></span>
+                </div>
+                <ul>
+                    <li><a href="#home" data-after="Home">Home</a></li>
+                    <li><a href="#about" data-after="Projects">About</a></li>
+                    <li><a href="#projects" data-after="About">Projects</a></li>
+                    <li><a href="#contact" data-after="Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- END OF NAV BAR -->
+
+    <!-- HOME SECTION -->
+    <section id="home">
+        <div class="home container">
+            <div>
+                <h2>Hello,</h2>
+                <h1>I am <span>Avery</span></h1>
+                <h2><span>UI/UX Designer</span> | <span>IT Student</span></h2>
+                <div class="icon">
+                    <a href="https://www.linkedin.com/in/averyguinto/" target="_blank"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/linkedin.png"></a>
+                    <a href="https://www.facebook.com/averypaula.guinto/" target="_blank"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/facebook.png"></a>
+                    <a href="https://github.com/apguinto" target="_blank"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/github.png"></a>
+                </div>
+            </div>
+            <div>
+                <img class="avery" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/avery.png">
+            </div>
+        </div>
+    </section>
+    <!-- END OF HOME SECTION -->
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="about container">
+            <h1 class="section-title">About</h1>
+            <div class="line"></div>
+            <div class="org-logo-container">
+                <img class="org-logo" style="height: 11vw;" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/gdsc-logo.png">
+                <img class="org-logo" style="height: 15vw;" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/pupstb-logo.png">
+            </div>
+            <p>
+                As a college student and UI/UX designer of the Google Developer Student Clubs 
+                at Polytechnic University of the Philippines - Sto. Tomas Branch, I am passionate about web development. 
+                Proficient in HTML, CSS, JavaScript, PHP, and MySQL, I create captivating web applications with seamless functionality and enjoyable user experiences. 
+                My dedication to continuous learning keeps me updated with emerging trends, while my design skills ensure visually appealing and user-friendly interfaces. 
+                Eager to explore new challenges and collaborate with diverse teams, I am committed to making meaningful contributions to the digital landscape.
+            </p>
+            <button onclick="window.location.href='https://github.com/apguinto/portfolio/blob/main/assets/resume.pdf';">Resume</button>
+            <div class="prog-lang-container">
+                <a href="https://isocpp.org/" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/c%2B%2B.png"></a>
+                <a href="https://www.java.com/en/" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/java.png"></a>
+                <a href="https://html.com/" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/html.png"></a>
+                <a href="https://www.php.net/" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/php.png"></a>
+                <a href="https://www.w3.org/Style/CSS/Overview.en.html" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/css.png"></a>
+                <a href="https://www.javascript.com/" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/js.png"></a>
+                <a href="https://www.mysql.com/" target="_blank"><img class="prog-lang" src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/mysql.png"></a>
+            </div>
+        </div>
+    </section>
+    <!-- END OF HOME SECTION -->
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <div class="projects container">
+            <h1 class="section-title">Projects</h1>
+            <div class="line"></div>
+            <div class="all-projects">
+                <!-- PROJECT 1 DESKTOP & MOBILE SIZE-->
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>GDSC - PUPSTB Landing Page</h1>
+                        <p>A simple landing page design for GDSC - PUPSTB’s website as part of application for UI/UX Lead.</p>
+                    </div>
+                    <div class="project-img">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/gdsc-landing-page.png">
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 DESKTOP & MOBILE SIZE-->
+                <div class="project-item desktop">
+                    <div class="project-img">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/gdsc-website.png">
+                    </div>
+                    <div class="project-info">
+                        <h1>GDSC - PUPSTB Website</h1>
+                        <p>UI/UX Design for the official GDSC - PUPSTB website.</p>
+                    </div>
+                </div>
+                <div class="project-item mobile">
+                    <div class="project-info">
+                        <h1>GDSC - PUPSTB Website</h1>
+                        <p>UI/UX Design for the official GDSC - PUPSTB website.</p>
+                    </div>
+                    <div class="project-img">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/gdsc-website.png">
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 DESKTOP & MOBILE SIZE-->
+                <div class="project-item">
+                    <div class="project-info">
+                        <h1>In the Moonlight</h1>
+                        <p>A webpage that showcases a parallax design.</p>
+                    </div>
+                    <div class="project-img">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/parallax.png">
+                    </div>
+                </div>
+
+                <!-- PROJECT 4 DESKTOP & MOBILE SIZE-->
+                <div class="project-item desktop">
+                    <div class="project-img">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/laya.png">
+                    </div>
+                    <div class="project-info">
+                        <h1>Laya</h1>
+                        <p>This is a freedom wall page made to unleash the user’s thoughts, and speak their truth.</p>
+                    </div>
+                </div>
+                <div class="project-item mobile">
+                    <div class="project-info">
+                        <h1>Laya</h1>
+                        <p>This is a freedom wall page made to unleash the user’s thoughts, and speak their truth.</p>
+                    </div>
+                    <div class="project-img">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/laya.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF PROJECT SECTION -->
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact container">
+            <h1>Contact</h1>
+            <div class="line"></div>
+            <h2>Get in touch with me!</h2>
+            <div class="all-contacts">
+                <div class="contact-item">
+                    <div class="item-container">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/phone.png">
+                        <p>+639686798102</p>
+                    </div>
+                    <div class="item-container">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/email.png">
+                        <p>apb.guinto@gmail.com</p>
+                    </div>
+                    <div class="item-container">
+                        <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/location.png">
+                        <p>Calamba City, Laguna</p>
+                    </div>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="form">
+                    <form class="send-message" onsubmit="reset(); return false"> 
+                        <p>Name</p>
+                        <input id="name" type="text">
+                        <p>Email</p>
+                        <input id="email" type="email">
+                        <p>Message</p>
+                        <textarea id="message" rows="5"></textarea>
+                        <button type="submit" id="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END OF CONTACT SECTION -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer container">
+            <div class="footer-items">
+                <div class="signatory-items">
+                    <img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/ag-logo.png">
+                    <div class="signatory">
+                        <h1>Avery Paula Guinto</h1>
+                        <p>UI/UX Designer</p>
+                        <p>PUP Sto. Tomas Branch</p>
+                    </div>
+                </div>
+                <div class="footer-contacts">
+                    <div class="contact-me">
+                        <h2>Contact Me</h2>
+                        <p>apb.guinto@gmail.com</p>
+                    </div>
+                    <div class="socials">
+                        <h2>Socials</h2>
+                        <div class="icon">
+                            <a href="https://www.linkedin.com/in/averyguinto/" target="_blank"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/linkedin.png"></a>
+                            <a href="https://www.facebook.com/averypaula.guinto/" target="_blank"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/facebook.png"></a>
+                            <a href="https://github.com/apguinto" target="_blank"><img src="https://raw.githubusercontent.com/apguinto/portfolio/main/assets/github.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COPYRIGHT -->
+            <h3>Avery Paula Guinto © All Rights Reserved 2023</h3>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        // JAVASCRIPT FOR MESSAGE FORM
+        var btn = document.getElementById("submit");
+        btn.addEventListener('click', function(e) {
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            var body = 'Name: '+name + '<br>Email: '+email + '<br>Message: '+message;
+
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "averyguinto7@gmail.com",
+                Password : "07C2BBCCBF27B8DC20A19225A3D66D146084",
+                To : 'apb.guinto@gmail.com',
+                From : email,
+                Subject : "New Inquiry From Protfolio",
+                Body : body
+            }).then(
+            message => alert("Message sent successfully")
+            );
+        })
+
+        // JAVASCRIPT FOR HUMBERGER MENU
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-list ul");
+
+        hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+        })
+    </script>
+</body>
+
+</html>
